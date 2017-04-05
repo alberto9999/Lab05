@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.anagrammi.controller.AnagrammiController"/>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.anagrammi.controller.AnagrammiController">
+   <top>
+      <Label text="LAB 5_ANAGRAMMI" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="AR ESSENCE" size="22.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#900f0f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="txtInserisci" promptText="Inserisci una parola..." />
+                  <Button fx:id="btnCalcola" mnemonicParsing="false" onAction="#doCalcola" text="Calcola Anagramma">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Label text="Anagrammi Corretti" textFill="#10a123">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtAreaCorretti" />
+            <Label text="Anagrammi Errati" textFill="#b90707">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtAreaErrati" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</BorderPane>
