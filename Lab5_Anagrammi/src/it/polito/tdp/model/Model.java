@@ -62,12 +62,16 @@ public class Model {
 		char temp=parolaChar[livello];
 		parolaChar[livello]=parolaChar[i];
 		parolaChar[i]=temp;
-		 parola=new String(parolaChar);
-		   //  if(!listaAnagrammi.contains(parola)){
-			  listaAnagrammi.add(parola);		
+		String parolaRic=new String(parolaChar);
+		   //  if(!listaAnagrammi.contains(parolaRic)){
+			  listaAnagrammi.add(parolaRic);		
 		 //    }
-		     if(livello<parola.length()-1){
-		trovaParola(parola,livello+1);	}
+		     if(livello<parolaRic.length()-1){
+		trovaParola(parolaRic,livello+1);	}
+		     
+		 temp=parolaChar[livello];
+		 parolaChar[livello]=parolaChar[i];   //backtracking
+	     parolaChar[i]=temp;
 		}
 	
 	}
